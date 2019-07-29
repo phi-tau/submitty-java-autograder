@@ -1,0 +1,36 @@
+{
+  "resource_limits" : {
+    "RLIMIT_CPU" : 60,
+    "RLIMIT_NPROC" : 100,
+    "RLIMIT_AS" : "RLIM_INFINITY"
+  },
+
+  "testcases" : [
+    {
+      "type" : "Compilation",
+      "title" : "Java - Compilation",
+      "command" : "javac -cp submitty_junit.jar Week05c_RainyDays.java",
+      "executable_name" : "Week05c_RainyDays.class",
+      "points" : 1
+    },
+    {
+      "type" : "Compilation",
+      "title" : "Java - JUnit Test Compilation",
+      "command" : "javac -cp submitty_junit.jar:. Week05c_RainyDaysTest.java",
+      "executable_name" : [ "Week05c_RainyDays.class", "Week05c_RainyDaysTest.class" ],
+      "points" : 1
+    },
+    {
+      "title" : "Java - JUnit Test",
+      "command" : "java -cp submitty_junit.jar:submitty_hamcrest.jar:submitty_emma.jar:. org.junit.runner.JUnitCore Week05c_RainyDaysTest",
+      "points" : 14,
+      "validation" : [
+        {
+          "method" : "JUnitTestGrader",
+          "actual_file" : "STDOUT.txt",
+          "num_tests" : 5
+        }
+      ]
+    }
+  ]
+}
