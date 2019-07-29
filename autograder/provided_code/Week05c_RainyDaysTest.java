@@ -34,12 +34,12 @@ public class Week05c_RainyDaysTest {
    
    @Test
    public void testLeap(){
-      assertEquals("Fails given test case!", tester.getRainyPercentage(2020, 97) , 26.502732240437158  , 0.0001);
+      assertEquals("Fails leap year test case!", tester.getRainyPercentage(2020, 97) , 26.502732240437158  , 0.0001);
    }
    
    @Test
    public void testNonLeapYear(){
-      assertEquals("Fails for non- leap years!", tester.getRainyPercentage(2014, 14) , 3.835616438356164 , 0.0001);
+      assertEquals("Fails for non-leap years!", tester.getRainyPercentage(2014, 14) , 3.835616438356164 , 0.0001);
    }
    
    @Test
